@@ -27,7 +27,7 @@ const NotesList = () => {
                 },
                 body: JSON.stringify({ noteIdentifier: noteId }),
             });
-            fetchNotes(); // Update notes list after deletion
+            fetchNotes(); 
         } catch (error) {
             console.error('Failed to delete note:', error);
         }

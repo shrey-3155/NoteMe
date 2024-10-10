@@ -25,7 +25,6 @@ const NoteDetail = () => {
 
     useEffect(() => {
         retrieveNote();
-        // eslint-disable-next-line
     }, []);
 
     return (

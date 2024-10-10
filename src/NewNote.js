@@ -20,7 +20,7 @@ const NewNote = () => {
             const result = await response.json();
 
             if (response.ok) {
-                navigate('/'); // Redirect to the main page after successful submission
+                navigate('/');
             } else {
                 console.error('Failed to create note:', result);
                 alert('Failed to create note: ' + result.message);

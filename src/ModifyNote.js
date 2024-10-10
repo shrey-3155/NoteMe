@@ -5,7 +5,7 @@ const ModifyNote = () => {
     const { state } = useLocation();
     const navigate = useNavigate();
     const [noteContent, setNoteContent] = useState('');
-    const [noteId, setNoteId] = useState(state.noteIdentifier); // Renamed to noteId for clarity
+    const [noteId, setNoteId] = useState(state.noteIdentifier);
 
     // Function to retrieve the note based on noteId
     const retrieveNote = async () => {
@@ -27,7 +27,6 @@ const ModifyNote = () => {
 
     useEffect(() => {
         retrieveNote();
-        // eslint-disable-next-line
     }, []);
 
     // Function to submit updated note
@@ -39,9 +38,9 @@ const ModifyNote = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ noteIdentifier: noteId, text: noteContent }), // Send noteId instead of noteIdentifier
+                body: JSON.stringify({ noteIdentifier: noteId, text: noteContent }),
             });
-            navigate('/'); // Redirect to the main page after updating
+            navigate('/'); 
         } catch (error) {
             console.error('Error updating note:', error);
         }
